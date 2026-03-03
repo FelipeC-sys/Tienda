@@ -10,8 +10,7 @@ public class Producto {
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
-
-    
+    }
 
     public String getCodigo() {
         return codigo;
@@ -23,7 +22,13 @@ public class Producto {
 
     public double getPrecio() {
         return precio;
-    }public void setPrecio(double precio) {
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setPrecio(double precio) {
         if (precio >= 0) {
             this.precio = precio;
         }
@@ -53,10 +58,5 @@ public class Producto {
                " | Nombre: " + nombre +
                " | Precio: $" + precio +
                " | Stock: " + stock;
-    }
-}
-
-    public int getStock() {
-        return stock;
     }
 }
