@@ -1,0 +1,71 @@
+Desarrollo
+
+1. ¿Por qué Producto no debe manejar la lista completa?
+
+La clase Producto debe encargarse únicamente de representar un producto individual, incluyendo sus atributos como nombre, precio, código, entre otros.
+
+Si esta clase también administrara la lista completa de productos, estaría asumiendo múltiples responsabilidades. Esto violaría el Principio de Responsabilidad Única, ya que la clase tendría más de una razón para cambiar.
+
+Separar la gestión de la lista en otra clase permite mantener el código organizado, reducir el acoplamiento y facilitar su mantenimiento.
+
+
+
+2. ¿Por qué Inventario no debe pedir datos por Scanner?
+
+La clase Inventario tiene como responsabilidad principal administrar los productos (agregar, eliminar, buscar, listar). No debería encargarse de interactuar con el usuario.
+
+El uso de Scanner pertenece a la capa de presentación, generalmente manejada en la clase Main. Si Inventario solicitara datos directamente, estaría mezclando lógica de negocio con interacción de usuario, lo que dificultaría la reutilización del código y las pruebas.
+
+Separar estas funciones permite que Inventario pueda utilizarse en otros entornos, como interfaces gráficas o aplicaciones web, sin modificar su estructura.
+
+
+
+3. ¿Qué principio de POO están aplicando al separar responsabilidades?
+
+Se está aplicando el Principio de Responsabilidad Única (SRP), el cual establece que una clase debe tener una sola responsabilidad y una única razón para cambiar.
+
+Al dividir las funciones entre:
+
+Producto → Representa un objeto.
+
+Inventario → Gestiona la colección de objetos.
+
+Main → Controla la interacción con el usuario.
+
+Se logra una estructura clara, organizada y más fácil de mantener.
+
+
+
+
+4. ¿Qué pasaría si todo estuviera en la clase Main?
+
+Si todo el código estuviera en la clase Main, el programa sería más difícil de leer, mantener y modificar.
+
+Además:
+
+El código sería desordenado.
+
+No habría reutilización de clases.
+
+Aumentaría la probabilidad de errores.
+
+Se dificultaría la escalabilidad del sistema.
+
+Este tipo de diseño no aprovecha correctamente los beneficios de la Programación Orientada a Objetos.
+
+
+
+
+5. ¿Qué ventajas tiene usar ArrayList frente a un arreglo tradicional?
+
+El uso de ArrayList ofrece varias ventajas frente a los arreglos tradicionales:
+
+Tamaño dinámico (no es necesario definirlo al inicio).
+
+Métodos incorporados como add(), remove(), contains().
+
+Mayor facilidad para insertar y eliminar elementos.
+
+No es necesario redimensionar manualmente el arreglo.
+
+En cambio, los arreglos tradicionales tienen tamaño fijo y requieren mayor manejo manual cuando se necesita ampliar su capacidad.
