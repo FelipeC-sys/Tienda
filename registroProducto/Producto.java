@@ -23,8 +23,40 @@ public class Producto {
 
     public double getPrecio() {
         return precio;
+    }public void setPrecio(double precio) {
+        if (precio >= 0) {
+            this.precio = precio;
+        }
     }
+
+    public void aumentarStock(int cantidad) {
+        if (cantidad > 0) {
+            stock += cantidad;
+        }
+    }
+
+    public boolean disminuirStock(int cantidad) {
+        if (cantidad > 0 && cantidad <= stock) {
+            stock -= cantidad;
+            return true;
+        }
+        return false;
+    }
+
+    public double calcularValorTotal() {
+        return precio * stock;
+    }
+
+    @Override
+    public String toString() {
+        return "Código: " + codigo +
+               " | Nombre: " + nombre +
+               " | Precio: $" + precio +
+               " | Stock: " + stock;
+    }
+}
 
     public int getStock() {
         return stock;
     }
+
